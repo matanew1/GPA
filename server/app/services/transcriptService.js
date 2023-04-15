@@ -5,7 +5,8 @@ class TranscriptService  {
 
     static async getTranscript() {
         try {
-            return parseGradesFromFile();
+            const { filteredSemesters } = await parseGradesFromFile();
+            return { filteredSemesters };
         } catch (error) {
             throw error;
         }        
